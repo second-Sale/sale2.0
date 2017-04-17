@@ -1,0 +1,40 @@
+#navStyle {
+    height: 80px;
+    width: 100%;
+    background-image:url(../image/3.jpg) ;
+}
+
+#signStyle{
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 30%;
+    height: 30%;
+    border-style: solid;
+    border-color: #c4e3f3;
+    padding: 20px;
+}
+
+.navButton{
+    font-weight: bold;
+    font-size: large;
+    margin-left: 90%;
+    margin-top:40px;
+    position: relative;
+    top:60%;
+}
+.navButton2{
+    position: relative;
+    font-weight: bold;
+    font-size: large;
+    left: 10px;
+    top:60%;
+}
+
+#button1{
+    margin-left: 10%;
+}
+
+#button2{
+    float: right;
+    margin-right: 10%;
+}
