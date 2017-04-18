@@ -6,9 +6,11 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from "./containers/App";
 import reducer from "./reducer/index";
 import Login from "./components/login";
-import Sign from "./components/sign";
+import Sign from "./containers/sign-container";
 import Home from "./components/Home"
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+import insertUser from "./middlewares/sign-middleware";
+
+const createStoreWithMiddleware = applyMiddleware(insertUser)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
