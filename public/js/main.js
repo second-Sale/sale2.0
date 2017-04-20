@@ -12,7 +12,7 @@ import insertUser from "./middlewares/sign-middleware";
 
 const createStoreWithMiddleware = applyMiddleware(insertUser)(createStore);
 
-const store = createStoreWithMiddleware(reducer);
+const store = createStoreWithMiddleware(()=>{});
 
 render(
     <Provider store={store}>
