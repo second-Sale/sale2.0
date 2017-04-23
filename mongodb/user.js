@@ -20,13 +20,14 @@ const isUserExit = function (req, res) {
 
     MongoClient.connect(DB_CONN_STR, (err, db)=> {
         const collection = db.collection('user');
-        const result = collection.findOne(userName);
-        console.log("result:", result);
-        if (result !== " ") {
-            res.json(true);
-        } else {
-            req.json(false);
-        }
+        collection.find(userName).toArray(function (err, docs) {
+            if(docs.length === 0) {
+                res.send(false);
+            } else {
+                res.send(true);
+            }
+        });
+
         db.close();
     })
 }
