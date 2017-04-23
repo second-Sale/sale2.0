@@ -6,6 +6,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onInsertUser: (text) => {
             dispatch({type: "REGIST", text})
+        },
+        isUserExit: (text) => {
+            dispatch({type: "ISUSEREXIT",text})
         }
     }
 };
