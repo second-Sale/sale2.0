@@ -5,7 +5,7 @@ const session = require('express-session');
 
 const app = new express();
 
-const user = require('./mongodb/user')
+const user = require('./mongodb/user');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -13,12 +13,12 @@ app.use(express.static('./public'));
 app.use(session({
     secret: 'a',
     resave: true,
-    saveUninitialized: true,
+    saveUninitialized: true
 }));
 
 app.get('*', (req, res) => {
     "use strict";
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 console.log("server")

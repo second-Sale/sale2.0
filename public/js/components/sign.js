@@ -5,10 +5,7 @@ class Sign extends React.Component {
     handleSubmit() {
         var name = this.refs.Username.value.trim();
         var password = this.refs.password.value.trim();
-        // var confirmPass = this.refs.comfirmPass.value.trim();
-
         this.props.onInsertUser({name,password});
-
     }
 
     render() {
