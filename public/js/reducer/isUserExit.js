@@ -1,4 +1,4 @@
-module.exports = (state = {userExit: true}, action) => {
+module.exports = (state = {userExit: false}, action) => {
     switch (action.type) {
         case "isUser":
             console.log("reducer:",action.userExit);

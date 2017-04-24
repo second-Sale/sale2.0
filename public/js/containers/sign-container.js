@@ -3,9 +3,9 @@ import Sign from '../components/sign';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
-    console.log("state:",state.userExit);
+    console.log("state:",state.userExit.userExit);
     return {
-        userExit: state.userExit
+        userExit: state.userExit.userExit
     }
 };
 

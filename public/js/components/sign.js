@@ -25,14 +25,14 @@ class Sign extends React.Component {
         this.props.isUserExit(name);
     }
 
-    componentWillUpdate(){
-        console.log(this.props.userExit);
+    componentDidUpdate(){
         let userExit = this.props.userExit;
-        console.log("userExit",userExit);
+        console.log("userExit",typeof (userExit));
+
         if(userExit){
             document.getElementById("warning").innerHTML = "用户已存在";
         }else{
-            document.getElementById("warning").innerHTML = " ";
+            document.getElementById("warning").innerHTML = "";
         }
     }
 
