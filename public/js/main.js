@@ -9,10 +9,11 @@ import Login from "./components/login";
 import Sign from "./containers/sign-container";
 import Home from "./components/Home"
 import insertUser from "./middlewares/sign-middleware";
+import isUserExit from "./middlewares/isUserExit-middlewares"
 
-const createStoreWithMiddleware = applyMiddleware(insertUser)(createStore);
+const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit)(createStore);
 
-const store = createStoreWithMiddleware(()=>{});
+const store = createStoreWithMiddleware(reducer);
 
 render(
     <Provider store={store}>

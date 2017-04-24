@@ -23,7 +23,8 @@ res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 
 console.log("server")
 
-app.post('/regist',user.insertUser)
+app.post('/regist',user.insertUser);
+app.post('/isUserExit',user.isUserExit);
 
 var server = app.listen(3000, () => {
     console.log('listening at port %s', server.address().port);

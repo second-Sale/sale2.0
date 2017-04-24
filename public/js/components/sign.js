@@ -5,7 +5,35 @@ class Sign extends React.Component {
     handleSubmit() {
         var name = this.refs.Username.value.trim();
         var password = this.refs.password.value.trim();
-        this.props.onInsertUser({name,password});
+        var confirmPass = this.refs.comfirmPass.value.trim();
+
+        if (name !== "" && password !== "" && confirmPass !== "") {
+            if (password !== confirmPass) {
+                document.getElementById("warning").innerHTML = "两次密码不一致";
+            } else {
+                this.props.onInsertUser({name, password});
+                document.getElementById("warning").innerHTML = " ";
+            }
+        } else {
+            document.getElementById("warning").innerHTML = "请填写完整信息";
+        }
+    }
+
+    isUserExit(){
+        var name = this.refs.Username.value.trim();
+        console.log(name);
+        this.props.isUserExit(name);
+    }
+
+    componentDidUpdate(){
+        let userExit = this.props.userExit;
+        console.log("userExit",typeof (userExit));
+
+        if(userExit){
+            document.getElementById("warning").innerHTML = "用户已存在";
+        }else{
+            document.getElementById("warning").innerHTML = "";
+        }
     }
 
     render() {
@@ -15,7 +43,8 @@ class Sign extends React.Component {
                 <div className="input-group">
                     <span className="input-group-addon" id="basic-addon1"><i
                         className="glyphicon glyphicon-user"></i></span>
-                    <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1" ref="Username"/>
+                    <input type="text" className="form-control" placeholder="Username" aria-describedby="basic-addon1"
+                           ref="Username" onBlur={this.isUserExit.bind(this)}/>
                 </div>
                 <br/>
                 <div className="input-group">
@@ -32,6 +61,7 @@ class Sign extends React.Component {
                            aria-describedby="basic-addon1" ref="comfirmPass"/>
                 </div>
                 <br/>
+                <div id="warning"><span id="warn">提示</span></div>
                 <button type="button" className="btn btn-info" id="button1" aria-label="Left Align"
                         onClick={this.handleSubmit.bind(this)}>
                     <span aria-hidden="true">注册</span>

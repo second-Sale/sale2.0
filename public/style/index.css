@@ -38,3 +38,13 @@
     float: right;
     margin-right: 10%;
 }
+
+#warn{
+    visibility: hidden;
+}
+
+#warning{
+    color: red;
+    font-weight: 200;
+    text-align: center;
+}
