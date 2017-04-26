@@ -53,6 +53,27 @@ const checkUser = function (req, res) {
     })
 }
 
+const checkUser = function (req, res) {
+    const name = req.body.name;
+    const password = req.body.password;
+
+    MongoClient.connect(DB_CONN_STR, (err, db)=> {
+        const collection = db.collection('user');
+        collection.find({name: name}).toArray(function (err, docs) {
+            console.log(docs);
+            if (docs.length === 0) {
+                res.send(false);
+            } else {
+                if (docs[0].password === password) {
+                    res.send(true);
+                } else {
+                    res.send(false);
+                }
+            }
+        })
+    })
+}
+
 module.exports = {
     insertUser,
     isUserExit,

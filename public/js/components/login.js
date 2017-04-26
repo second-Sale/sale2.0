@@ -1,8 +1,11 @@
 import React from "react";
 import Nav from "./nav"
+import {browserHistory} from 'react-router'
+
 
 class Login extends React.Component {
     loginSubmit() {
+<<<<<<< HEAD
         var name=this.refs.userName.value.trim();
         var password=this.refs.password.value.trim();
         this.props.loginUser({name,password});
@@ -12,6 +15,20 @@ class Login extends React.Component {
         var checkUser=this.props.checkUser;
         if(checkUser===false){
             document.getElementById("warning").innerHTML = "用户或密码错误";
+=======
+        var name = this.refs.userName.value.trim();
+        var password = this.refs.password.value.trim();
+        this.props.loginUser({name, password});
+    }
+
+    componentDidUpdate() {
+        var checkUser = this.props.checkUser;
+        console.log("checkuser", checkUser)
+        if (checkUser === false) {
+            document.getElementById("warning").innerHTML = "用户或密码错误";
+        } else {
+            browserHistory.push("/");
+>>>>>>> 49ba19b8d8442de8a975e27c728b04f1349fd34f
         }
     }
 
