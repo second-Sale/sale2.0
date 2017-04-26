@@ -7,7 +7,7 @@ const mapStateToProps=(state)=>{
     return{
         checkUser:state.login.checkUser
     }
-}
+};
 
 const mapDispatchToProps=(dispatch)=>{
     return {
