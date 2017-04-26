@@ -5,7 +5,7 @@ const session = require('express-session');
 
 const app = new express();
 
-const user = require('./mongodb/user')
+const user = require('./mongodb/user');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -13,18 +13,19 @@ app.use(express.static('./public'));
 app.use(session({
     secret: 'a',
     resave: true,
-    saveUninitialized: true,
+    saveUninitialized: true
 }));
 
 app.get('*', (req, res) => {
     "use strict";
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 console.log("server")
 
 app.post('/regist',user.insertUser);
 app.post('/isUserExit',user.isUserExit);
+app.post('/login',user.checkUser);
 
 var server = app.listen(3000, () => {
     console.log('listening at port %s', server.address().port);

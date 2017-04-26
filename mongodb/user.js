@@ -21,7 +21,7 @@ const isUserExit = function (req, res) {
     MongoClient.connect(DB_CONN_STR, (err, db)=> {
         const collection = db.collection('user');
         collection.find(userName).toArray(function (err, docs) {
-            if(docs.length === 0) {
+            if (docs.length === 0) {
                 res.send(false);
             } else {
                 res.send(true);
@@ -32,9 +32,31 @@ const isUserExit = function (req, res) {
     })
 };
 
+const checkUser = function (req, res) {
+    const name = req.body.name;
+    const password = req.body.password;
+
+    MongoClient.connect(DB_CONN_STR, (err, db)=> {
+        const collection = db.collection('user');
+        collection.find({name: name}).toArray(function (err, docs) {
+            console.log(docs);
+            if (docs.length === 0) {
+                res.send(false);
+            } else {
+                if (docs[0].password === password) {
+                    res.send(true);
+                } else {
+                    res.send(false);
+                }
+            }
+        })
+    })
+}
+
 module.exports = {
     insertUser,
-    isUserExit
+    isUserExit,
+    checkUser
 };
 
 
