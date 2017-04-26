@@ -30,7 +30,7 @@ const isUserExit = function (req, res) {
 
         db.close();
     })
-}
+};
 
 module.exports = {
     insertUser,
