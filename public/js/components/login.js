@@ -1,17 +1,22 @@
 import React from "react";
 import Nav from "./nav"
+import {browserHistory} from 'react-router'
+
 
 class Login extends React.Component {
     loginSubmit() {
-        var name=this.refs.userName.value.trim();
-        var password=this.refs.password.value.trim();
-        this.props.loginUser({name,password});
+        var name = this.refs.userName.value.trim();
+        var password = this.refs.password.value.trim();
+        this.props.loginUser({name, password});
     }
 
-    componentDidUpdate(){
-        var checkUser=this.props.checkUser;
-        if(checkUser===false){
+    componentDidUpdate() {
+        var checkUser = this.props.checkUser;
+        console.log("checkuser", checkUser)
+        if (checkUser === false) {
             document.getElementById("warning").innerHTML = "用户或密码错误";
+        } else {
+            browserHistory.push("/");
         }
     }
 
