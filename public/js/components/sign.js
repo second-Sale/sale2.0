@@ -1,5 +1,7 @@
 import React from "react";
 import Nav from './nav';
+import {browserHistory} from 'react-router'
+
 
 class Sign extends React.Component {
     handleSubmit() {
@@ -13,25 +15,27 @@ class Sign extends React.Component {
             } else {
                 this.props.onInsertUser({name, password});
                 document.getElementById("warning").innerHTML = " ";
+                browserHistory.push("/login")
+
             }
         } else {
             document.getElementById("warning").innerHTML = "请填写完整信息";
         }
     }
 
-    isUserExit(){
+    isUserExit() {
         var name = this.refs.Username.value.trim();
         console.log(name);
         this.props.isUserExit(name);
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         let userExit = this.props.userExit;
-        console.log("userExit",typeof (userExit));
+        console.log("userExit", typeof (userExit));
 
-        if(userExit){
+        if (userExit) {
             document.getElementById("warning").innerHTML = "用户已存在";
-        }else{
+        } else {
             document.getElementById("warning").innerHTML = "";
         }
     }
@@ -39,6 +43,7 @@ class Sign extends React.Component {
     render() {
         return <div>
             <Nav/>
+            <form >
             <div id="signStyle">
                 <div className="input-group">
                     <span className="input-group-addon" id="basic-addon1"><i
@@ -66,10 +71,11 @@ class Sign extends React.Component {
                         onClick={this.handleSubmit.bind(this)}>
                     <span aria-hidden="true">注册</span>
                 </button>
-                <button type="button" className="btn btn-info" id="button2" aria-label="Left Align">
+                <button type="reset" className="btn btn-info" id="button2" aria-label="Left Align">
                     <span aria-hidden="true">取消</span>
                 </button>
             </div>
+            </form>
         </div>
     }
 }

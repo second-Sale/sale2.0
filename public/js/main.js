@@ -5,13 +5,14 @@ import {Provider} from "react-redux";
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from "./containers/App";
 import reducer from "./reducer/index";
-import Login from "./components/login";
+import Login from "./containers/login-container";
 import Sign from "./containers/sign-container";
 import Home from "./components/Home"
 import insertUser from "./middlewares/sign-middleware";
 import isUserExit from "./middlewares/isUserExit-middlewares"
+import login from './middlewares/login-middlewares'
 
-const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit)(createStore);
+const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

@@ -25,6 +25,7 @@ console.log("server")
 
 app.post('/regist',user.insertUser);
 app.post('/isUserExit',user.isUserExit);
+app.post('/login',user.checkUser);
 
 var server = app.listen(3000, () => {
     console.log('listening at port %s', server.address().port);
