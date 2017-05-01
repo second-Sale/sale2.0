@@ -14,11 +14,18 @@
     padding: 20px;
 }
 
+.publishButton{
+    position: relative;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 85%;
+    top:60%;
+}
+
 .navButton{
     font-weight: bold;
     font-size: large;
-    margin-left: 90%;
-    margin-top:40px;
+    left:10px;
     position: relative;
     top:60%;
 }
@@ -26,7 +33,7 @@
     position: relative;
     font-weight: bold;
     font-size: large;
-    left: 10px;
+    left: 20px;
     top:60%;
 }
 
@@ -47,4 +54,28 @@
     color: red;
     font-weight: 200;
     text-align: center;
+}
+
+
+/*publish style*/
+
+.publishInput{
+    margin: 0 auto;
+    width: 30%;
+    height: auto;
+    margin-top: 6%;
+}
+
+.input-group-addon:first-child{
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.publishSubmit{
+    margin-left: 10%;
+}
+
+.publishReset{
+    float:right;
+    margin-right: 10%;
 }

@@ -7,10 +7,11 @@ import App from "./containers/App";
 import reducer from "./reducer/index";
 import Login from "./containers/login-container";
 import Sign from "./containers/sign-container";
-import Home from "./components/Home"
+import Home from "./components/Home";
+import Publish from "./components/publish";
 import insertUser from "./middlewares/sign-middleware";
-import isUserExit from "./middlewares/isUserExit-middlewares"
-import login from './middlewares/login-middlewares'
+import isUserExit from "./middlewares/isUserExit-middlewares";
+import login from './middlewares/login-middlewares';
 
 const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login)(createStore);
 
@@ -23,6 +24,7 @@ render(
                 <IndexRoute component={Home}/>
                     <Route path="/sign" component={Sign}></Route>
                     <Route path="/login" component={Login}></Route>
+                    <Route path="/publish" component={Publish}></Route>
             </Route>
         </Router>
     </Provider>, document.getElementById('app'));
