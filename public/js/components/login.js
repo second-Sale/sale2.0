@@ -22,7 +22,6 @@ class Login extends React.Component {
 
     componentDidUpdate() {
         var checkUser = this.props.checkUser;
-        console.log("checkuser", checkUser)
         if (checkUser === false) {
             document.getElementById("warning").innerHTML = "用户或密码错误";
         } else {

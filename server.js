@@ -2,10 +2,12 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-
+const cookieParser = require('cookie-parser');
 const app = new express();
 
-const user = require('./mongodb/user');
+app.use(cookieParser());
+var sessions = {};
+var SESSION_KEY = 'session.id';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,16 +18,22 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
+
+const regist = require('./mongodb/routers/sign-router');
+const isUserExit = require('./mongodb/routers/isUserExit-router');
+const login=require('./mongodb/routers/login-router');
+
+app.use('/', regist);
+app.use('/', isUserExit);
+app.use('/',login);
+
+
 app.get('*', (req, res) => {
     "use strict";
 res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
-console.log("server")
-
-app.post('/regist',user.insertUser);
-app.post('/isUserExit',user.isUserExit);
-app.post('/login',user.checkUser);
 
 var server = app.listen(3000, () => {
     console.log('listening at port %s', server.address().port);
