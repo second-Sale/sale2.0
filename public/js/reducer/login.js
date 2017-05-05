@@ -1,4 +1,4 @@
-module.exports = (state = {checkUser: true}, action)=> {
+module.exports = (state = {checkUser: " "}, action)=> {
     switch (action.type) {
         case "CHECK_USER":
             return {checkUser: action.checkUser};

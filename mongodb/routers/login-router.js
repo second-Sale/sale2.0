@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/login', (req, res)=> {
 
-    login(req.body, (docs)=>{
+    login(req.body, (docs)=> {
         if (docs.length === 0) {
             res.send(false);
         } else {
