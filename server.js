@@ -12,10 +12,12 @@ var SESSION_KEY = 'session.id';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
+
 app.use(session({
-    secret: 'a',
-    resave: true,
-    saveUninitialized: true
+    secret: 'a',    //
+    resave: true,   //每次请求都重新设置session cookie
+    saveUninitialized: true,     //无论有没有session cookie，每次请求都设置个session cookie
+    cookie: { maxAge: 60 * 1000 }   //设置存放 session id 的 cookie 的相关选项
 }));
 
 
