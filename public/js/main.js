@@ -12,8 +12,9 @@ import Publish from "./components/publish";
 import insertUser from "./middlewares/sign-middleware";
 import isUserExit from "./middlewares/isUserExit-middlewares";
 import login from './middlewares/login-middlewares';
+import logOut from './middlewares/logOut-middleware';
 
-const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login)(createStore);
+const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login,logOut)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

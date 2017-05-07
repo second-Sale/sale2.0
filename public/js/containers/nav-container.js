@@ -10,10 +10,11 @@ const mapStateToProps = (state)=> {
     }
 };
 
+
 const mapDispatchToProps = (dispatch) => {
     return {
-        isUserLogin: (text)=> {
-            dispatch({type: "IS_USER_LOGIN", text})
+        logOutUser: ()=> {
+            dispatch({type:"LOGOUT"});
         }
     }
 };
