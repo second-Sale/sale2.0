@@ -1,5 +1,6 @@
 import React from 'react';
-import Nav from '../components/nav'
+import Nav from '../containers/nav-container'
+
 
 class Publish extends React.Component{
     render(){

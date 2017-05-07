@@ -26,9 +26,10 @@ router.post('/login', (req, res)=> {
                     res.cookie('user', req.session.userName);
                 }
 
-                res.send(true);
+                // res.send(true);
+                res.send({tag:true,isLogin:true,user:req.session.userName})
             } else {
-                res.send(false);
+                res.send({tag:false});
             }
         }
     });

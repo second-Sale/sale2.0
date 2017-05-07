@@ -30,7 +30,6 @@ app.use('/', regist);
 app.use('/', isUserExit);
 app.use('/',login);
 
-
 app.get('*', (req, res) => {
     "use strict";
 res.sendFile(path.resolve(__dirname, 'public', 'index.html'));

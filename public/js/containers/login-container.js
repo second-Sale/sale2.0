@@ -2,19 +2,18 @@ import React from 'react';
 import Login from '../components/login';
 import {connect} from 'react-redux';
 
-const mapStateToProps=(state)=>{
-    console.log("test:",state);
-    return{
-        checkUser:state.login.checkUser
+const mapStateToProps = (state)=> {
+    return {
+        checkUser: state.login.checkUser
     }
 };
 
-const mapDispatchToProps=(dispatch)=>{
+const mapDispatchToProps = (dispatch)=> {
     return {
-        loginUser :(text)=>{
-            dispatch({type:"LOGIN_USER",text});
+        loginUser: (text)=> {
+            dispatch({type: "LOGIN_USER", text});
         }
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

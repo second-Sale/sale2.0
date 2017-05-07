@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from './nav'
+import Nav from '../containers/nav-container'
 
 class Home extends React.Component {
 
@@ -7,6 +7,9 @@ class Home extends React.Component {
         return (
             <div>
                 <Nav/>
+                <div>
+                    test
+                </div>
             </div>
         );
     }
