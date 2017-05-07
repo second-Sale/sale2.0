@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from '../containers/nav-container'
-
+import Footer from './footer'
 import {browserHistory} from 'react-router'
 
 
@@ -77,6 +77,7 @@ class Sign extends React.Component {
                 </button>
             </div>
             </form>
+            <Footer/>
         </div>
     }
 }

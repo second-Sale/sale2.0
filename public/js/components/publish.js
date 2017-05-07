@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../containers/nav-container'
+import Footer from './footer'
 
 
 class Publish extends React.Component{
@@ -43,6 +44,7 @@ class Publish extends React.Component{
                     <button type="reset" className="btn btn-info publishReset">取消</button>
                 </form>
             </div>
+            <Footer/>
         </div>
     }
 }
