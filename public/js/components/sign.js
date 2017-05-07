@@ -1,5 +1,6 @@
 import React from "react";
-import Nav from './nav';
+import Nav from '../containers/nav-container'
+
 import {browserHistory} from 'react-router'
 
 

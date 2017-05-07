@@ -25,11 +25,12 @@ app.use(session({
 const regist = require('./mongodb/routers/sign-router');
 const isUserExit = require('./mongodb/routers/isUserExit-router');
 const login=require('./mongodb/routers/login-router');
+const logOut=require('./mongodb/routers/logOut-router');
 
 app.use('/', regist);
 app.use('/', isUserExit);
 app.use('/',login);
-
+app.use('/',logOut);
 
 app.get('*', (req, res) => {
     "use strict";

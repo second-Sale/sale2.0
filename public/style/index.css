@@ -18,14 +18,35 @@
     position: relative;
     font-size: large;
     font-weight: bold;
-    margin-left: 85%;
+    left: 2%;
     top:60%;
 }
 
-.navButton{
+.homeButton{
+    position: relative;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 10%;
+    top:60%;
+}
+
+.personButton{
+    position: relative;
+    font-size: large;
+    font-weight: bold;
+    left: 4%;
+    top:60%;
+}
+
+.nav{
+    display: none;
+}
+
+#navButton{
+    display: inline;
     font-weight: bold;
     font-size: large;
-    left:10px;
+    left:65%;
     position: relative;
     top:60%;
 }
@@ -33,8 +54,7 @@
     position: relative;
     font-weight: bold;
     font-size: large;
-    left: 20px;
-    top:60%;
+    left: 10px;
 }
 
 #button1{

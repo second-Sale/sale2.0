@@ -1,5 +1,6 @@
 import React from "react";
-import Nav from "./nav"
+import Nav from '../containers/nav-container'
+
 import {browserHistory} from 'react-router'
 
 
@@ -16,8 +17,6 @@ class Login extends React.Component {
             document.getElementById("warning").innerHTML = "用户或密码错误";
         } else {
             document.cookie = "path=/";
-
-            console.log('cookie:',document.cookie);
             browserHistory.push("/");
         }
     }
