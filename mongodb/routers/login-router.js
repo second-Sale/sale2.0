@@ -7,9 +7,13 @@ const router = express.Router();
 router.post('/login', (req, res)=> {
 
     login(req.body, (docs)=> {
+
         if (docs.length === 0) {
+
             res.send(false);
+
         } else {
+
             if (docs[0].password === req.body.password) {
 
                 req.session.userName = docs[0].name;
