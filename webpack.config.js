@@ -6,14 +6,18 @@ module.exports = {
     vendor: ["react", "react-dom", "./node_modules/bootstrap/dist/css/bootstrap.css"],
     index: ["./public/js/main.js", "./public/style/index.css"]
   },
+
   output: {
     path: require('path').resolve("./public/dist"),
     filename: "[name].js"
   },
+
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+
   module: {
+
     loaders: [
       {
         test: /\.js$/,

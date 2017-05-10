@@ -4,6 +4,11 @@
     background-image:url(../image/3.jpg) ;
 }
 
+.testtest{
+    background-image: url(../image/1.jpg);
+    height: 100%;
+}
+
 #signStyle{
     margin: 0 auto;
     margin-top: 5%;
