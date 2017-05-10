@@ -8,12 +8,11 @@ class Publish extends React.Component{
     Publish(){
         var goodsName=this.refs.goodsName.value.trim();
         var goodsDescript=this.refs.goodsDescript.value.trim();
-        // var goodsPrice=this.ref.goodsPrice.value.trim();
-        // var goodsCount=this.ref.goodsCount.value.trim();
-        // var goodsContact=this.ref.goodsContact.value.trim();
-    // ,goodsPrice,goodsCount,goodsContact
+        var goodsPrice=this.refs.goodsPrice.value.trim();
+        var goodsCount=this.refs.goodsCount.value.trim();
+        var goodsContact=this.refs.goodsContact.value.trim();
         var user=this.props.user;
-        this.props.publish({user,goodsName,goodsDescript});
+        this.props.publish({user,goodsName,goodsDescript,goodsPrice,goodsCount,goodsContact});
     }
 
     render(){
