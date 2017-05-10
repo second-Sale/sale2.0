@@ -1,11 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #navStyle {
     height: 80px;
     width: 100%;
     background-image:url(../image/3.jpg) ;
 }
 
-.testtest{
-    background-image: url(../image/1.jpg);
+.sign-background{
+    background: url(../image/4.jpg) no-repeat;
+    width: 100%;
+>>>>>>> d1557ec3749c6bb228208dd75a94540e205ea4a2
     height: 100%;
 }
 
@@ -17,6 +24,7 @@
     border-style: solid;
     border-color: #c4e3f3;
     padding: 20px;
+    margin-bottom: 200px;
 }
 
 .publishButton{

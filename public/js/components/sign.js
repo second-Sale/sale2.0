@@ -42,7 +42,7 @@ class Sign extends React.Component {
     }
 
     render() {
-        return <div className="testtest">
+        return <div className="sign-background">
             <Nav/>
             <form >
             <div id="signStyle">
