@@ -13,11 +13,14 @@ class Login extends React.Component {
 
     componentDidUpdate() {
         var checkUser = this.props.checkUser;
+        var isLogin = this.props.isLogin;
+        console.log("checkUser:", checkUser)
         if (checkUser === false ) {
             document.getElementById("warning").innerHTML = "用户或密码错误";
         }
-        else if (checkUser === " "){
-            browserHistory.push("/login");
+        else if (checkUser === "logout" ){
+            // browserHistory.push("/login");
+            alert("请先登录")
         }
         else {
             document.cookie = "path=/";

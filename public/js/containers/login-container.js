@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state)=> {
     return {
-        checkUser: state.login.checkUser
+        checkUser: state.login.checkUser,
+        isLogin: state.login.isLogin
     }
 };
 

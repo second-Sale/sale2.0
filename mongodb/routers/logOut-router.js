@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/logOut', (req, res)=> {
-    res.send({tag:false,isLogin:false,user:''})
+    res.send({tag:"logout",isLogin:false,user:''})
 
 });
 
