@@ -27,6 +27,7 @@ class Nav extends React.Component {
 
     LoginOut() {
         this.props.logOutUser();
+        browserHistory.push("/login");
     }
 
     Home() {
