@@ -13,16 +13,20 @@ class Login extends React.Component {
 
     componentDidUpdate() {
         var checkUser = this.props.checkUser;
-        if (checkUser === false) {
+        if (checkUser === false ) {
             document.getElementById("warning").innerHTML = "用户或密码错误";
-        } else {
+        }
+        else if (checkUser === " "){
+            browserHistory.push("/login");
+        }
+        else {
             document.cookie = "path=/";
             browserHistory.push("/");
         }
     }
 
     render() {
-        return <div>
+        return <div className="sign-background">
             <Nav/>
             <form>
                 <div id="signStyle">
