@@ -1,21 +1,30 @@
 import React from 'react';
 import Nav from '../containers/nav-container'
 import Footer from './footer'
+import {browserHistory} from 'react-router'
 
 
-class Publish extends React.Component{
+class Publish extends React.Component {
 
-    Publish(){
-        var goodsName=this.refs.goodsName.value.trim();
-        var goodsDescript=this.refs.goodsDescript.value.trim();
-        var goodsPrice=this.refs.goodsPrice.value.trim();
-        var goodsCount=this.refs.goodsCount.value.trim();
-        var goodsContact=this.refs.goodsContact.value.trim();
-        var user=this.props.user;
-        this.props.publish({user,goodsName,goodsDescript,goodsPrice,goodsCount,goodsContact});
+    Publish() {
+        var goodsName = this.refs.goodsName.value.trim();
+        var goodsDescript = this.refs.goodsDescript.value.trim();
+        var goodsPrice = this.refs.goodsPrice.value.trim();
+        var goodsCount = this.refs.goodsCount.value.trim();
+        var goodsContact = this.refs.goodsContact.value.trim();
+        var user = this.props.user;
+
+        if (goodsName === '' || goodsContact === '' || goodsCount === '' || goodsDescript === '' || goodsPrice === '') {
+            document.getElementById('warning').innerHTML = "请填写完整信息";
+        } else {
+            this.props.publish({user, goodsName, goodsDescript, goodsPrice, goodsCount, goodsContact});
+            document.getElementById('warning').innerHTML = '';
+            browserHistory.push('/');
+        }
+
     }
 
-    render(){
+    render() {
         return <div>
             <Nav/>
             <div className="publishInput">
@@ -50,9 +59,10 @@ class Publish extends React.Component{
                         <input type="file" className="form-control"/>
                     </div>
                     <br/>
-                    <input type="file" className=""/>
                     <br/>
-                    <button type="button" className="btn btn-info publishSubmit" onClick={this.Publish.bind(this)}>确认</button>
+                    <div id="warning"><span id="warn">提示</span></div>
+                    <button type="button" className="btn btn-info publishSubmit" onClick={this.Publish.bind(this)}>确认
+                    </button>
                     <button type="reset" className="btn btn-info publishReset">取消</button>
                 </form>
             </div>

@@ -19,7 +19,6 @@ class Nav extends React.Component {
 
         if (Cookies.user && this.props.isLogin === true) {
             browserHistory.push("/publish")
-
         } else {
             alert("请登陆");
             browserHistory.push("/login")

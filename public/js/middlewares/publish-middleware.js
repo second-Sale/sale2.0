@@ -9,8 +9,8 @@ export default store => next => action => {
                 goodsName: action.text.goodsName,
                 goodsDescript: action.text.goodsDescript,
                 goodsPrice: action.text.goodsPrice,
-                goodsCount:action.text.goodsCount,
-                goodsContact:action.text.goodsContact
+                goodsCount: action.text.goodsCount,
+                goodsContact: action.text.goodsContact
             })
             .end((err, res) => {
                 console.log("res", res.body)
