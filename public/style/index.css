@@ -112,43 +112,17 @@
 }
 
 .footer{
-    margin-top: 10px;
+    margin-top:10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 
-.footer1{
-    position: relative;
-    left: 17%;
-}
-
-.footer2{
-    position: relative;
-    left:32%;
-}
-.footer3{
-    position: relative;
-    left:50%;
-}
-.footer4{
-    position: relative;
-    left:65%;
-}
-
-.footer5{
-    position: relative;
-    left:22%;
-}
-
-.footer6{
-    position: relative;
-    left:35%;
-}
-.footer7{
-    position: relative;
-    left:45%;
-}
-
-.footer8{
-    margin-top: 10px;
+.foot{
+    margin-top:10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 

@@ -26,11 +26,13 @@ const regist = require('./mongodb/routers/sign-router');
 const isUserExit = require('./mongodb/routers/isUserExit-router');
 const login=require('./mongodb/routers/login-router');
 const logOut=require('./mongodb/routers/logOut-router');
+const publish=require('./mongodb/routers/publish-router');
 
 app.use('/', regist);
 app.use('/', isUserExit);
 app.use('/',login);
 app.use('/',logOut);
+app.use('/',publish);
 
 app.get('*', (req, res) => {
     "use strict";
