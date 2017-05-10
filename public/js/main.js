@@ -8,13 +8,14 @@ import reducer from "./reducer/index";
 import Login from "./containers/login-container";
 import Sign from "./containers/sign-container";
 import Home from "./components/Home";
-import Publish from "./components/publish";
+import Publish from "./containers/pubilsh-containers";
 import insertUser from "./middlewares/sign-middleware";
 import isUserExit from "./middlewares/isUserExit-middlewares";
 import login from './middlewares/login-middlewares';
 import logOut from './middlewares/logOut-middleware';
+import publish from './middlewares/publish-middleware'
 
-const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login,logOut)(createStore);
+const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login,logOut,publish)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

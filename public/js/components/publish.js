@@ -4,6 +4,18 @@ import Footer from './footer'
 
 
 class Publish extends React.Component{
+
+    Publish(){
+        var goodsName=this.refs.goodsName.value.trim();
+        var goodsDescript=this.refs.goodsDescript.value.trim();
+        // var goodsPrice=this.ref.goodsPrice.value.trim();
+        // var goodsCount=this.ref.goodsCount.value.trim();
+        // var goodsContact=this.ref.goodsContact.value.trim();
+    // ,goodsPrice,goodsCount,goodsContact
+        var user=this.props.user;
+        this.props.publish({user,goodsName,goodsDescript});
+    }
+
     render(){
         return <div>
             <Nav/>
@@ -11,27 +23,27 @@ class Publish extends React.Component{
                 <form>
                     <div className="input-group">
                         <span className="input-group-addon">名称：</span>
-                        <input type="text" className="form-control"/>
+                        <input type="text" className="form-control" ref="goodsName"/>
                     </div>
                     <br/>
                     <div className="input-group">
                         <span className="input-group-addon">详细描述：</span>
-                        <input type="text" className="form-control"/>
+                        <input type="text" className="form-control" ref="goodsDescript"/>
                     </div>
                     <br/>
                     <div className="input-group">
                         <span className="input-group-addon">价格：</span>
-                        <input type="text" className="form-control"/>
+                        <input type="text" className="form-control" ref="goodsPrice"/>
                     </div>
                     <br/>
                     <div className="input-group">
                         <span className="input-group-addon">数量：</span>
-                        <input type="text" className="form-control"/>
+                        <input type="text" className="form-control" ref="goodsCount"/>
                     </div>
                     <br/>
                     <div className="input-group">
                         <span className="input-group-addon">联系方式：</span>
-                        <input type="text" className="form-control"/>
+                        <input type="text" className="form-control" ref="goodsContact"/>
                     </div>
                     <br/>
                     <div className="input-group">
@@ -39,8 +51,9 @@ class Publish extends React.Component{
                         <input type="file" className="form-control"/>
                     </div>
                     <br/>
+                    <input type="file" className=""/>
                     <br/>
-                    <button type="button" className="btn btn-info publishSubmit">确认</button>
+                    <button type="button" className="btn btn-info publishSubmit" onClick={this.Publish.bind(this)}>确认</button>
                     <button type="reset" className="btn btn-info publishReset">取消</button>
                 </form>
             </div>
