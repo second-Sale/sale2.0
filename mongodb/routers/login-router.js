@@ -8,12 +8,11 @@ router.post('/login', (req, res)=> {
 
     login(req.body, (docs)=> {
 
+        console.log(docs)
+
         if (docs.length === 0) {
-
-            res.send(false);
-
+            res.send({tag:false,isLogin:false, user:" "});
         } else {
-
             if (docs[0].password === req.body.password) {
 
                 req.session.userName = docs[0].name;
@@ -30,10 +29,9 @@ router.post('/login', (req, res)=> {
                     res.cookie('user', req.session.userName);
                 }
 
-                // res.send(true);
                 res.send({tag:true,isLogin:true,user:req.session.userName})
             } else {
-                res.send({tag:false});
+                res.send({tag:false,isLogin:false, user:" "});
             }
         }
     });

@@ -5,6 +5,7 @@ export default store=>next=>action=> {
         request.post('/login')
             .send({name: action.text.name, password: action.text.password})
             .end((err, res)=> {
+                console.log("login:",res.body)
                 next({type: "CHECK_USER", checkUser: res.body});
             })
     } else {
