@@ -8,8 +8,6 @@ router.post('/login', (req, res)=> {
 
     login(req.body, (docs)=> {
 
-        console.log(docs)
-
         if (docs.length === 0) {
             res.send({tag:false,isLogin:false, user:" "});
         } else {

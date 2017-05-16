@@ -22,7 +22,7 @@ class Login extends React.Component {
             alert("请先登录")
         }
         else {
-            document.cookie = "path=/";
+            // document.cookie = "path=/";
             browserHistory.push("/");
         }
     }

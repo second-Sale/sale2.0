@@ -14,7 +14,6 @@ class Publish extends React.Component {
         var goodsContact = this.refs.goodsContact.value.trim();
 
         var file = document.getElementById('upload').files[0];
-        console.log(file);
         var picture = window.URL.createObjectURL(file);
 
         var user = this.props.user;

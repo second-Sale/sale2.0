@@ -7,15 +7,16 @@ import App from "./containers/App";
 import reducer from "./reducer/index";
 import Login from "./containers/login-container";
 import Sign from "./containers/sign-container";
-import Home from "./components/Home";
+import Home from "./containers/home-container";
 import Publish from "./containers/pubilsh-containers";
 import insertUser from "./middlewares/sign-middleware";
 import isUserExit from "./middlewares/isUserExit-middlewares";
 import login from './middlewares/login-middlewares';
 import logOut from './middlewares/logOut-middleware';
-import publish from './middlewares/publish-middleware'
+import publish from './middlewares/publish-middleware';
+import showHome from './middlewares/Home-middlewares'
 
-const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login,logOut,publish)(createStore);
+const createStoreWithMiddleware = applyMiddleware(insertUser,isUserExit,login,logOut,publish,showHome)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

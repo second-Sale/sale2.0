@@ -4,7 +4,6 @@ const publish = require('../dbs/publish-db')
 const router = express.Router();
 
 router.post('/publish', (req, res)=> {
-    console.log(req.body)
 
     publish(req.body, (err, result)=> {
         if (err) {

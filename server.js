@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-    const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const app = new express();
 
 app.use(cookieParser());
@@ -17,26 +17,27 @@ app.use(session({
     secret: 'a',    //
     resave: true,   //每次请求都重新设置session cookie
     saveUninitialized: true,     //无论有没有session cookie，每次请求都设置个session cookie
-    cookie: { maxAge: 60 * 1000 }   //设置存放 session id 的 cookie 的相关选项
+    cookie: {maxAge: 60 * 1000}   //设置存放 session id 的 cookie 的相关选项
 }));
-
 
 
 const regist = require('./mongodb/routers/sign-router');
 const isUserExit = require('./mongodb/routers/isUserExit-router');
-const login=require('./mongodb/routers/login-router');
-const logOut=require('./mongodb/routers/logOut-router');
-const publish=require('./mongodb/routers/publish-router');
+const login = require('./mongodb/routers/login-router');
+const logOut = require('./mongodb/routers/logOut-router');
+const publish = require('./mongodb/routers/publish-router');
+const home = require('./mongodb/routers/home-router');
 
 app.use('/', regist);
 app.use('/', isUserExit);
-app.use('/',login);
-app.use('/',logOut);
-app.use('/',publish);
+app.use('/', login);
+app.use('/', logOut);
+app.use('/', publish);
+app.use('/', home);
 
 app.get('*', (req, res) => {
     "use strict";
-res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 
