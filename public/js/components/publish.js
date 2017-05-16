@@ -12,12 +12,17 @@ class Publish extends React.Component {
         var goodsPrice = this.refs.goodsPrice.value.trim();
         var goodsCount = this.refs.goodsCount.value.trim();
         var goodsContact = this.refs.goodsContact.value.trim();
+
+        var file = document.getElementById('upload').files[0];
+        console.log(file);
+        var picture = window.URL.createObjectURL(file);
+
         var user = this.props.user;
 
         if (goodsName === '' || goodsContact === '' || goodsCount === '' || goodsDescript === '' || goodsPrice === '') {
             document.getElementById('warning').innerHTML = "请填写完整信息";
         } else {
-            this.props.publish({user, goodsName, goodsDescript, goodsPrice, goodsCount, goodsContact});
+            this.props.publish({user, goodsName, goodsDescript, goodsPrice, goodsCount, goodsContact, picture});
             document.getElementById('warning').innerHTML = '';
             browserHistory.push('/');
         }
@@ -56,7 +61,7 @@ class Publish extends React.Component {
                     <br/>
                     <div className="input-group">
                         <span className="input-group-addon">上传图片：</span>
-                        <input type="file" className="form-control"/>
+                        <input type="file" className="form-control" id="upload"/>
                     </div>
                     <br/>
                     <br/>

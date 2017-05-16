@@ -10,7 +10,8 @@ export default store => next => action => {
                 goodsDescript: action.text.goodsDescript,
                 goodsPrice: action.text.goodsPrice,
                 goodsCount: action.text.goodsCount,
-                goodsContact: action.text.goodsContact
+                goodsContact: action.text.goodsContact,
+                picture:action.text.picture
             })
             .end((err, res) => {
                 console.log("res", res.body)
