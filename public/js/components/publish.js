@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../containers/nav-container'
 import Footer from './footer'
 import {browserHistory} from 'react-router'
+import UploadImage from '../containers/uploadImage-container';
 
 
 class Publish extends React.Component {
@@ -13,8 +14,12 @@ class Publish extends React.Component {
         var goodsCount = this.refs.goodsCount.value.trim();
         var goodsContact = this.refs.goodsContact.value.trim();
 
-        var file = document.getElementById('upload').files[0];
-        var picture = window.URL.createObjectURL(file);
+        var picture  = this.props.image;
+
+        // alert(image);
+
+        // var picture = document.getElementById('upload').files[0];
+        // console.log("picture: ", picture)
 
         var user = this.props.user;
 
@@ -58,10 +63,7 @@ class Publish extends React.Component {
                         <input type="text" className="form-control" ref="goodsContact"/>
                     </div>
                     <br/>
-                    <div className="input-group">
-                        <span className="input-group-addon">上传图片：</span>
-                        <input type="file" className="form-control" id="upload"/>
-                    </div>
+                    <UploadImage/>
                     <br/>
                     <br/>
                     <div id="warning"><span id="warn">提示</span></div>

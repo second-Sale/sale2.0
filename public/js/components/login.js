@@ -6,9 +6,10 @@ import {browserHistory} from 'react-router'
 
 class Login extends React.Component {
     loginSubmit() {
-        var name=this.refs.userName.value.trim();
-        var password=this.refs.password.value.trim();
-        this.props.loginUser({name,password});
+        var name = this.refs.userName.value.trim();
+        var password = this.refs.password.value.trim();
+        this.props.loginUser({name, password});
+
     }
 
     componentDidUpdate() {
@@ -18,7 +19,7 @@ class Login extends React.Component {
         if (checkUser === false) {
             document.getElementById("warning").innerHTML = "用户或密码错误";
         }
-        else if (checkUser === "logout" ){
+        else if (checkUser === "logout") {
             alert("请先登录")
         }
         else {

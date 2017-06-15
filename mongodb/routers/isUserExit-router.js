@@ -7,7 +7,6 @@ const router = express.Router();
 router.post('/isUserExit', (req, res)=> {
 
     isUserExit(req.body, (result)=>{
-        console.log('result',result);
         if(result.length === 0){
             res.json(false)
         }else{

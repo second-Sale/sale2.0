@@ -27,6 +27,8 @@ const login = require('./mongodb/routers/login-router');
 const logOut = require('./mongodb/routers/logOut-router');
 const publish = require('./mongodb/routers/publish-router');
 const home = require('./mongodb/routers/home-router');
+const upload = require('./mongodb/routers/uploadImage');
+
 
 app.use('/', regist);
 app.use('/', isUserExit);
@@ -34,6 +36,7 @@ app.use('/', login);
 app.use('/', logOut);
 app.use('/', publish);
 app.use('/', home);
+app.use('/',upload);
 
 app.get('*', (req, res) => {
     "use strict";

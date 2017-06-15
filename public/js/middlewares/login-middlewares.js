@@ -2,6 +2,8 @@ import request from 'superagent';
 
 export default store=>next=>action=> {
     if (action.type === 'LOGIN_USER') {
+        alert("middl")
+
         request.post('/login')
             .send({name: action.text.name, password: action.text.password})
             .end((err, res)=> {

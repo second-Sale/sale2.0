@@ -23,7 +23,6 @@ router.post('/login', (req, res)=> {
                 });
 
                 if (Cookies.user !== req.session.userName) {
-                    console.log('user');
                     res.cookie('user', req.session.userName);
                 }
 

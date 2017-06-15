@@ -6,9 +6,7 @@ const router = express.Router();
 
 router.post('/getAllGoods', (req, res)=> {
 
-    console.log('home.router');
     getGoods(req.body, (docs)=> {
-        console.log(docs)
         res.send(docs)
     })
 

@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import userExit from './isUserExit';
 import login from './login';
-import goods from './getAllGoods'
+import goods from './getAllGoods';
+import upload from './uploadImage'
 
 export default combineReducers({
     userExit,
     login,
-    goods
+    goods,
+    upload
 });

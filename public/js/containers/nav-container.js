@@ -3,7 +3,7 @@ import Nav from '../components/nav';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state)=> {
-    console.log("stste;", state);
+    // console.log("stste;", state);
     return {
         isLogin: state.login.isLogin,
         user:state.login.user

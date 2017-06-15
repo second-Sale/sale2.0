@@ -11,7 +11,7 @@ export default store => next => action => {
                 goodsPrice: action.text.goodsPrice,
                 goodsCount: action.text.goodsCount,
                 goodsContact: action.text.goodsContact,
-                picture:action.text.picture
+                picture: action.text.picture
             })
             .end((err, res) => {
                 console.log("res", res.body)

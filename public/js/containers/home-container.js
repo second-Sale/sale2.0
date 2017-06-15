@@ -3,7 +3,6 @@ import Home from '../components/Home';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state)=> {
-    console.log("home-container",state.goods.goods);
     return {
         goods: state.goods.goods
     }
